@@ -17,7 +17,7 @@ on:
 
   workflow_run:
     workflows:
-      - Stg Actions
+      - Call a reusable workflow
     types:
       - completed
 
