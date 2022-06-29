@@ -22,7 +22,7 @@ on:
       - completed
 
 env:
-  HOGE: CALLER_SECRET
+  HOGE: SECRET
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -40,5 +40,5 @@ jobs:
       - name: Run Caller Prod Actions
         run: echo ${{ env.HOGE }}
         env:
-          HOGE: ${{ secrets[format('{0}', env.HOGE)] }}
+          HOGE: ${{ secrets[format('CALLER_{0}', env.HOGE)] }}
 
