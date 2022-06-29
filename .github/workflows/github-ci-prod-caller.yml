@@ -46,7 +46,9 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run Caller Prod Actions
-        run: echo ${{ env.HOGE }}
+        run: |
+          - echo ${{ env.HOGE }}
+          - echo ${{ needs.precall.outputs.DOMAIN_SERVICE_NM }}
         env:
           HOGE: ${{ secrets[format('CALLER_{0}', needs.precall.outputs.DOMAIN_SERVICE_NM)] }}
 
