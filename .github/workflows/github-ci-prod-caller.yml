@@ -32,7 +32,7 @@ jobs:
       DOMAIN_SERVICE_NM: ${{ steps.set_secret_name.outputs.DOMAIN_SERVICE_NAME }}
     steps:
       - id: set_secret_name
-        run: echo "::set-output name=DOMAIN_SERVICE_NAME::${secret} | sed -e 's/(.*1\)/\U\1/'"
+        run: echo "::set-output name=DOMAIN_SERVICE_NAME::${HOGE} | sed -e 's/(.*1\)/\U\1/'"
     
   # This workflow contains a single job called "build"
   build:
