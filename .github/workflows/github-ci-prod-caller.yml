@@ -35,7 +35,7 @@ jobs:
         run: |
           TMP=`${HOGE} | sed -e 's/.\+/\U\0/'`
           echo ${TMP}
-          echo "::set-output name=DOMAIN_SERVICE_NAME::${TMP}"
+          echo "::set-output name=DOMAIN_SERVICE_NAME::${{ env.HOGE }}"
     
   # This workflow contains a single job called "build"
   build:
