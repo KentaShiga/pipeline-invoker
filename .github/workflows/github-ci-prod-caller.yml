@@ -35,5 +35,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run Caller Prod Actions
-        run: echo Caller Prod Action!
+        run: echo ${{ HOGE }}
+        with:
+          HOGE: ${{ secrets[CALLER_SECRET] }}
 
