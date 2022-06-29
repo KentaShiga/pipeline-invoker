@@ -37,5 +37,5 @@ jobs:
       - name: Run Caller Prod Actions
         run: echo ${{ env.HOGE }}
         env:
-          HOGE: ${{ secrets[CALLER_SECRET] }}
+          HOGE: ${{ secrets.CALLER_SECRET }}
 
