@@ -33,9 +33,9 @@ jobs:
     steps:
       - id: set_secret_name
         run: |
-          TMP=`${HOGE} | sed -e 's/.\+/\U\0/'`
+          TMP=`echo ${HOGE} | sed -e 's/.\+/\U\0/'`
           echo ${TMP}
-          echo "::set-output name=DOMAIN_SERVICE_NAME::${{ env.HOGE }}"
+          echo "::set-output name=DOMAIN_SERVICE_NAME::${TMP}"
     
   # This workflow contains a single job called "build"
   build:
